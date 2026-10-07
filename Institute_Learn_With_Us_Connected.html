@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Institute Learn With Us - Crypto Trading Education and Student Registration">
+<title>Institute Learn With Us | Crypto Trading Education</title>
+<style>
+:root{
+  --bg:#050814; --panel:#0d1424; --panel2:#10192c; --text:#f7f7fb; --muted:#aab2c7;
+  --purple:#7c3cff; --pink:#e84b8a; --cyan:#35d7ff; --gold:#f6b73c; --line:rgba(255,255,255,.11);
+  --shadow:0 20px 60px rgba(0,0,0,.35); --radius:18px;
+}
+*{box-sizing:border-box;scroll-behavior:smooth}
+body{margin:0;background:radial-gradient(circle at 80% 10%,rgba(124,60,255,.13),transparent 28%),var(--bg);color:var(--text);font-family:Inter,Segoe UI,Arial,sans-serif;line-height:1.55}
+a{text-decoration:none;color:inherit}
+.container{width:min(1180px,92%);margin:auto}
+nav{position:sticky;top:0;z-index:50;background:rgba(5,8,20,.82);backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}
+.nav-inner{height:76px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.brand{display:flex;align-items:center;gap:11px;font-weight:800}
+.logo{width:43px;height:43px;border-radius:12px;display:grid;place-items:center;background:linear-gradient(135deg,var(--purple),var(--pink));font-size:22px;box-shadow:0 0 30px rgba(124,60,255,.35)}
+.brand small{display:block;color:var(--muted);font-weight:500;font-size:11px}
+.links{display:flex;gap:28px;color:#dfe3ee;font-size:14px}
+.links a:hover{color:#fff}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;border:0;border-radius:12px;padding:13px 20px;font-weight:800;cursor:pointer;color:white;background:linear-gradient(135deg,var(--purple),var(--pink));box-shadow:0 10px 28px rgba(124,60,255,.22);transition:.2s}
+.btn:hover{transform:translateY(-2px);filter:brightness(1.08)}
+.btn.secondary{background:transparent;border:1px solid var(--line);box-shadow:none}
+.hero{padding:75px 0 45px;overflow:hidden}
+.hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center}
+.eyebrow{color:#b98cff;font-weight:900;letter-spacing:2px;font-size:16px}
+h1{font-size:clamp(42px,6vw,72px);line-height:1.02;margin:15px 0 20px;letter-spacing:-2px}
+.gradient{background:linear-gradient(90deg,#fff,#bd83ff,#f45a9b);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero p{color:var(--muted);font-size:18px;max-width:610px}
+.features{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:28px 0}
+.feature{padding:13px 10px;border-right:1px solid var(--line);text-align:center}
+.feature:last-child{border:0}.feature b{display:block;font-size:13px}.feature span{font-size:22px}
+.actions{display:flex;gap:12px;flex-wrap:wrap}
+.contact-strip{margin-top:35px;border:1px solid var(--line);background:rgba(13,20,36,.8);border-radius:16px;padding:14px;display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.contact-item{display:flex;align-items:center;gap:10px;padding:6px 12px;border-right:1px solid var(--line)}
+.contact-item:last-child{border:0}.contact-icon{font-size:23px}.contact-item small{display:block;color:var(--muted)}
+.market{position:relative;min-height:410px;border:1px solid rgba(124,60,255,.3);border-radius:28px;background:linear-gradient(145deg,rgba(20,25,48,.95),rgba(7,10,22,.9));box-shadow:var(--shadow);overflow:hidden}
+.market:before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(124,60,255,.11) 1px,transparent 1px),linear-gradient(90deg,rgba(124,60,255,.11) 1px,transparent 1px);background-size:45px 45px;mask-image:linear-gradient(to bottom,#000,transparent)}
+.chart{position:absolute;left:8%;right:5%;bottom:90px;height:170px}
+.chart svg{width:100%;height:100%}
+.coin{position:absolute;border-radius:50%;display:grid;place-items:center;font-weight:900;box-shadow:0 0 45px rgba(246,183,60,.25)}
+.btc{width:155px;height:155px;right:22%;top:80px;background:radial-gradient(circle at 30% 25%,#ffd978,#d4860e);border:7px solid #f6b73c;color:#3e2504;font-size:72px;transform:rotate(-9deg)}
+.eth{width:100px;height:100px;right:5%;top:190px;background:radial-gradient(circle at 30% 25%,#bba7ff,#6243c6);border:5px solid #967dff;font-size:44px}
+.coin.small{width:46px;height:46px;right:54%;top:45px;font-size:23px;background:#c58b25;border:3px solid #f6b73c}
+.ticker{position:absolute;left:24px;bottom:22px;right:24px;display:flex;justify-content:space-between;color:var(--muted);font-size:12px}
+section{padding:70px 0}.section-title{text-align:center;margin-bottom:38px}.section-title h2{font-size:36px;margin:0 0 7px}.section-title p{color:var(--muted);margin:0}
+.about-grid,.benefit-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.card{background:linear-gradient(145deg,rgba(16,25,44,.9),rgba(10,15,28,.9));border:1px solid var(--line);border-radius:var(--radius);padding:24px;box-shadow:0 10px 35px rgba(0,0,0,.18)}
+.card h3{margin-top:8px}.card p{color:var(--muted);font-size:14px}
+.icon{font-size:29px}
+.course{display:flex;flex-direction:column;gap:15px}.course ul{margin:0;padding-left:20px;color:var(--muted)}.course li{margin:7px 0}
+.survey-wrap{background:linear-gradient(180deg,rgba(11,17,31,.95),rgba(7,11,22,.98));border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.form-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.form-card{background:rgba(15,23,40,.95);border:1px solid var(--line);border-radius:17px;padding:20px}
+.form-card.full{grid-column:1/-1}.form-card h3{margin:0 0 16px;display:flex;align-items:center;gap:9px}.num{width:29px;height:29px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(135deg,var(--purple),var(--pink));font-size:13px}
+label{display:block;font-size:13px;margin:12px 0 7px;color:#e7eaf3}
+input,select,textarea{width:100%;background:#090f1d;border:1px solid #26324a;color:#fff;border-radius:9px;padding:12px 13px;outline:none;font:inherit}
+input:focus,select:focus,textarea:focus{border-color:#8d64ff;box-shadow:0 0 0 3px rgba(124,60,255,.12)}
+textarea{min-height:110px;resize:vertical}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.options{display:grid;gap:8px}
+.option{display:flex;gap:9px;align-items:flex-start;color:#d5daE8;font-size:13px}.option input{width:auto;margin-top:4px;accent-color:var(--purple)}
+.notice{border:1px solid rgba(246,183,60,.55);background:rgba(246,183,60,.05);border-radius:12px;padding:13px;color:#f8d27c;font-size:13px;margin-top:14px}
+.disclaimer{display:grid;grid-template-columns:1fr auto;gap:25px;align-items:center}.disclaimer p{color:var(--muted);font-size:13px;margin:4px 0}.check{display:flex;gap:9px;align-items:flex-start;font-size:13px}.check input{width:auto;margin-top:4px;accent-color:var(--purple)}
+.submit-card{display:flex;align-items:center;justify-content:space-between;gap:20px}
+.error{color:#ff7c9e;font-size:12px;margin-top:5px;display:none}
+.success{display:none;text-align:center;padding:35px 15px}.success .big{font-size:54px}
+footer{padding:45px 0 20px;border-top:1px solid var(--line);background:#040711}
+.footer-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:30px}.footer-grid p,.footer-grid a{color:var(--muted);font-size:13px}.footer-grid a{display:block;margin:8px 0}.copyright{text-align:center;border-top:1px solid var(--line);margin-top:30px;padding-top:18px;color:#707991;font-size:12px}
+.toast{position:fixed;right:20px;bottom:20px;background:#101a2c;border:1px solid #33415f;border-radius:12px;padding:14px 17px;box-shadow:var(--shadow);display:none;z-index:100;color:#fff}
+@media(max-width:900px){.links{display:none}.hero-grid{grid-template-columns:1fr}.market{min-height:350px}.form-grid,.about-grid,.benefit-grid{grid-template-columns:1fr 1fr}.form-card.full{grid-column:1/-1}.footer-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){.hero{padding-top:45px}.features{grid-template-columns:1fr 1fr}.contact-strip,.form-grid,.about-grid,.benefit-grid,.footer-grid{grid-template-columns:1fr}.contact-item{border-right:0;border-bottom:1px solid var(--line);padding:10px}.contact-item:last-child{border-bottom:0}.row{grid-template-columns:1fr}.market{min-height:300px}.btc{width:115px;height:115px;font-size:52px;right:20%;top:75px}.eth{width:75px;height:75px;font-size:33px;top:185px}.disclaimer{grid-template-columns:1fr}.submit-card{flex-direction:column;align-items:stretch}}
+</style>
+</head>
+<body>
+<nav>
+  <div class="container nav-inner">
+    <a class="brand" href="#home"><div class="logo">📈</div><div>Institute Learn With Us<small>Learn • Grow • Trade • Succeed</small></div></a>
+    <div class="links"><a href="#home">Home</a><a href="#about">About Us</a><a href="#courses">Courses</a><a href="#benefits">Benefits</a><a href="#survey">Register</a><a href="#contact">Contact</a></div>
+    <a class="btn" href="#survey">Register Now</a>
+  </div>
+</nav>
+
+<main id="home">
+<section class="hero">
+<div class="container">
+<div class="hero-grid">
+  <div>
+    <div class="eyebrow">LEARN. TRADE. GROW.</div>
+    <h1>Master Crypto Trading <span class="gradient">From Basics to Advanced</span></h1>
+    <p>Learn cryptocurrency fundamentals, technical analysis, trading strategies, risk management and trading psychology in a structured educational environment.</p>
+    <div class="features">
+      <div class="feature"><span>📚</span><b>Beginner to Advanced</b></div>
+      <div class="feature"><span>📊</span><b>Practical Learning</b></div>
+      <div class="feature"><span>🤝</span><b>Expert Mentorship</b></div>
+      <div class="feature"><span>🛡️</span><b>Risk Management</b></div>
+    </div>
+    <div class="actions">
+      <a class="btn" href="#survey">Join the Course / Register →</a>
+      <a class="btn secondary" target="_blank" rel="noopener" href="https://wa.me/917061072527?text=Hello%20Institute%20Learn%20With%20Us%2C%20I%20am%20interested%20in%20your%20crypto%20trading%20course.">🟢 WhatsApp Us</a>
+    </div>
+  </div>
+  <div class="market" aria-label="Decorative cryptocurrency trading illustration">
+    <div class="coin small">₿</div><div class="coin btc">₿</div><div class="coin eth">◆</div>
+    <div class="chart">
+      <svg viewBox="0 0 700 230" preserveAspectRatio="none" aria-hidden="true">
+        <defs><linearGradient id="g" x1="0" x2="1"><stop stop-color="#7c3cff"/><stop offset="1" stop-color="#e84b8a"/></linearGradient></defs>
+        <path d="M0 195 C45 165 70 175 110 150 S175 175 220 125 S285 155 320 90 S380 120 425 65 S490 105 530 45 S590 85 630 25 S670 55 700 8" fill="none" stroke="url(#g)" stroke-width="5"/>
+        <path d="M0 195 C45 165 70 175 110 150 S175 175 220 125 S285 155 320 90 S380 120 425 65 S490 105 530 45 S590 85 630 25 S670 55 700 8 L700 230 L0 230Z" fill="url(#g)" opacity=".10"/>
+      </svg>
+    </div>
+    <div class="ticker"><span>BTC/USDT</span><span>ETH/USDT</span><span>Educational chart • Not financial advice</span></div>
+  </div>
+</div>
+<div class="contact-strip" id="contact">
+  <div class="contact-item"><span class="contact-icon">🟢</span><div><small>WhatsApp</small><b>7061072527</b></div></div>
+  <div class="contact-item"><span class="contact-icon">✉️</span><div><small>Email</small><b>supportlearnwithus@gmail.com</b></div></div>
+  <div class="contact-item"><span class="contact-icon">📍</span><div><small>Location</small><b>Ghazipur, Uttar Pradesh</b></div></div>
+</div>
+</div>
+</section>
+
+<section id="about">
+<div class="container">
+<div class="section-title"><h2>Learn With a Structured Approach</h2><p>Build knowledge first, understand risk, then practice.</p></div>
+<div class="about-grid">
+  <div class="card"><div class="icon">🧠</div><h3>Understand the Market</h3><p>Start with crypto, blockchain, wallets, exchanges and market basics before moving into charts.</p></div>
+  <div class="card"><div class="icon">📈</div><h3>Develop Trading Skills</h3><p>Study chart structure, technical analysis, candlesticks and practical trading concepts.</p></div>
+  <div class="card"><div class="icon">🛡️</div><h3>Respect Risk</h3><p>Learn why position sizing, stop-loss planning, discipline and psychology matter in trading.</p></div>
+</div>
+</div>
+</section>
+
+<section id="courses">
+<div class="container">
+<div class="section-title"><h2>Course Topics</h2><p>A flexible learning path for beginners and developing traders.</p></div>
+<div class="benefit-grid">
+  <div class="card course"><h3>🌱 Foundation</h3><ul><li>Crypto & blockchain basics</li><li>Bitcoin & Ethereum</li><li>Wallets and exchanges</li><li>Market terminology</li></ul></div>
+  <div class="card course"><h3>📊 Technical Analysis</h3><ul><li>Chart reading</li><li>Candlestick patterns</li><li>Support & resistance</li><li>Trend and market structure</li></ul></div>
+  <div class="card course"><h3>🎯 Trading Discipline</h3><ul><li>Risk management</li><li>Trading psychology</li><li>Trade planning</li><li>Futures & spot concepts</li></ul></div>
+</div>
+</div>
+</section>
+
+<section id="benefits">
+<div class="container">
+<div class="section-title"><h2>Why Learn With Us?</h2><p>Education designed around understanding—not profit promises.</p></div>
+<div class="about-grid">
+  <div class="card"><div class="icon">👨‍🏫</div><h3>Mentorship</h3><p>Get guidance while developing your understanding of crypto markets and trading concepts.</p></div>
+  <div class="card"><div class="icon">💻</div><h3>Practical Sessions</h3><p>Connect concepts with charts and examples so you can learn how market analysis works.</p></div>
+  <div class="card"><div class="icon">⚖️</div><h3>Risk First</h3><p>Learn that losses are possible and that responsible risk management is a core trading skill.</p></div>
+</div>
+</div>
+</section>
+
+<section class="survey-wrap" id="survey">
+<div class="container">
+<div class="section-title"><h2>Student Registration & Survey</h2><p>Tell us about yourself so we can understand your learning needs.</p></div>
+<form id="registrationForm">
+<div class="form-grid">
+  <div class="form-card">
+    <h3><span class="num">1</span> Student Information</h3>
+    <label>Full Name *</label><input name="name" required placeholder="Enter your full name">
+    <div class="row"><div><label>Age *</label><input name="age" type="number" min="13" max="100" required placeholder="Age"></div><div><label>City *</label><input name="city" required placeholder="Your city"></div></div>
+    <label>Mobile / WhatsApp Number *</label><input name="phone" inputmode="numeric" pattern="[0-9]{10}" required placeholder="10 digit mobile number"><div class="error" id="phoneError">Please enter a valid 10-digit mobile number.</div>
+    <label>Email Address *</label><input name="email" type="email" required placeholder="you@example.com">
+    <label>Current Occupation / Student Status *</label>
+    <select name="occupation" required><option value="">Select your status</option><option>School Student</option><option>College Student</option><option>Working Professional</option><option>Business Owner</option><option>Freelancer</option><option>Job Seeker</option><option>Other</option></select>
+  </div>
+
+  <div class="form-card">
+    <h3><span class="num">2</span> Trading Experience</h3>
+    <label>What best describes your crypto trading experience?</label>
+    <div class="options">
+      <label class="option"><input type="radio" name="experience" value="Completely New" required> Completely New — never traded before</label>
+      <label class="option"><input type="radio" name="experience" value="Beginner"> Beginner — learning and exploring</label>
+      <label class="option"><input type="radio" name="experience" value="Some Experience"> Some Experience — traded a few times</label>
+      <label class="option"><input type="radio" name="experience" value="Experienced"> Experienced Trader — trade regularly</label>
+    </div>
+    <div class="notice">💡 It's okay if you are a beginner. The learning path can start from the basics.</div>
+  </div>
+
+  <div class="form-card">
+    <h3><span class="num">3</span> What Do You Want to Learn?</h3>
+    <label>Select all topics you are interested in:</label>
+    <div class="options">
+      <label class="option"><input type="checkbox" name="topics" value="Crypto Basics"> Crypto Basics</label>
+      <label class="option"><input type="checkbox" name="topics" value="Blockchain"> Blockchain Basics</label>
+      <label class="option"><input type="checkbox" name="topics" value="Bitcoin & Ethereum"> Bitcoin & Ethereum</label>
+      <label class="option"><input type="checkbox" name="topics" value="Technical Analysis"> Technical Analysis</label>
+      <label class="option"><input type="checkbox" name="topics" value="Candlestick Patterns"> Candlestick Patterns</label>
+      <label class="option"><input type="checkbox" name="topics" value="Risk Management"> Risk Management</label>
+      <label class="option"><input type="checkbox" name="topics" value="Trading Psychology"> Trading Psychology</label>
+      <label class="option"><input type="checkbox" name="topics" value="Futures Trading"> Futures Trading</label>
+      <label class="option"><input type="checkbox" name="topics" value="Spot Trading"> Spot Trading</label>
+      <label class="option"><input type="checkbox" name="topics" value="Portfolio Management"> Portfolio Management</label>
+      <label class="option"><input type="checkbox" name="topics" value="DeFi / Staking"> DeFi / Staking</label>
+    </div>
+    <label>Other topic</label><input name="otherTopic" placeholder="Optional">
+  </div>
+
+  <div class="form-card">
+    <h3><span class="num">4</span> Trading / Investment Experience</h3>
+    <label>How long have you been interested in crypto?</label>
+    <select name="duration"><option value="">Select duration</option><option>Less than 3 months</option><option>3–6 months</option><option>6–12 months</option><option>1–2 years</option><option>2+ years</option></select>
+    <label>Have you invested in cryptocurrency before?</label>
+    <div class="options"><label class="option"><input type="radio" name="invested" value="Yes"> Yes</label><label class="option"><input type="radio" name="invested" value="No"> No</label></div>
+    <label>If yes, approximate investment range (optional)</label>
+    <select name="range"><option value="">Prefer not to say</option><option>Under ₹5,000</option><option>₹5,000–₹25,000</option><option>₹25,000–₹1,00,000</option><option>Above ₹1,00,000</option></select>
+    <label>Which exchanges have you used? (optional)</label><input name="exchanges" placeholder="e.g. Binance, CoinDCX">
+  </div>
+
+  <div class="form-card">
+    <h3><span class="num">5</span> Course Preference</h3>
+    <label>Preferred Mode of Learning</label>
+    <div class="options"><label class="option"><input type="radio" name="mode" value="Online" required> Online — Live Classes</label><label class="option"><input type="radio" name="mode" value="Offline"> Offline — Classroom</label></div>
+    <label>Preferred Days</label>
+    <div class="options"><label class="option"><input type="checkbox" name="days" value="Weekdays"> Weekdays</label><label class="option"><input type="checkbox" name="days" value="Weekends"> Weekends</label></div>
+    <label>Preferred Time</label>
+    <select name="time"><option value="">Select time</option><option>Morning (6 AM–12 PM)</option><option>Afternoon (12 PM–5 PM)</option><option>Evening (5 PM–10 PM)</option><option>Night (10 PM–1 AM)</option></select>
+    <label>How did you hear about us?</label>
+    <select name="source"><option value="">Select an option</option><option>WhatsApp</option><option>Instagram</option><option>Facebook</option><option>YouTube</option><option>Friend / Referral</option><option>Google</option><option>Other</option></select>
+  </div>
+
+  <div class="form-card">
+    <h3><span class="num">6</span> Your Goals</h3>
+    <label>What are your main goals for learning crypto trading?</label>
+    <textarea name="goals" placeholder="Tell us what you want to learn or achieve..."></textarea>
+    <label>Anything else you want us to know?</label>
+    <textarea name="notes" placeholder="Optional"></textarea>
+  </div>
+
+  <div class="form-card full disclaimer">
+    <div>
+      <h3>🛡️ Risk Disclaimer</h3>
+      <p>Cryptocurrency trading involves significant risk and may not be suitable for all investors. Past performance is not indicative of future results. This course is provided for educational purposes only and does not guarantee profits or investment returns.</p>
+      <label class="check"><input type="checkbox" id="agree" required> I have read and agree to the above disclaimer. *</label>
+    </div>
+    <div style="text-align:center">⚠️<br><small style="color:var(--muted)">Trade responsibly</small></div>
+  </div>
+
+  <div class="form-card full submit-card">
+    <div><h3 style="margin:0 0 4px">🚀 Submit Your Registration</h3><small style="color:var(--muted)">Review your information and submit the form.</small></div>
+    <button class="btn" type="submit">Submit My Registration →</button>
+  </div>
+</div>
+</form>
+
+<div class="success" id="success">
+  <div class="big">✅</div>
+  <h2>Thank You for Registering!</h2>
+  <p style="color:var(--muted)">We have received your information. Our team will contact you shortly regarding the course.</p>
+  <a class="btn" target="_blank" rel="noopener" href="https://wa.me/917061072527?text=Hello%20Institute%20Learn%20With%20Us%2C%20I%20have%20completed%20the%20course%20registration%20form.">Contact Us on WhatsApp</a>
+</div>
+</div>
+</section>
+</main>
+
+<footer>
+<div class="container">
+<div class="footer-grid">
+  <div><div class="brand"><div class="logo">📈</div><div>Institute Learn With Us<small>Learn • Grow • Trade • Succeed</small></div></div><p>Empowering students with structured crypto trading education, practical concepts and responsible risk awareness.</p></div>
+  <div><h3>Quick Links</h3><a href="#home">Home</a><a href="#about">About Us</a><a href="#courses">Courses</a><a href="#benefits">Benefits</a><a href="#survey">Register</a></div>
+  <div><h3>Contact Us</h3><a href="https://wa.me/917061072527" target="_blank">🟢 7061072527</a><a href="mailto:supportlearnwithus@gmail.com">✉️ supportlearnwithus@gmail.com</a><p>📍 Ghazipur, Uttar Pradesh</p></div>
+  <div><h3>Important</h3><p>Education only. Crypto trading carries risk. No profit or return is guaranteed.</p></div>
+</div>
+<div class="copyright">© <span id="year"></span> Institute Learn With Us. All rights reserved.</div>
+</div>
+</footer>
+<div class="toast" id="toast">Registration saved in this browser.</div>
+
+<script>
+ const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzrjyFGJ-4fLdhexI3amDQfQJBYSdAePPOCvmRFUbtTPXL1D6lpfuihed2LCF64PEwCcg/exec';
+ const form=document.getElementById('registrationForm');
+ const success=document.getElementById('success');
+ const toast=document.getElementById('toast');
+ document.getElementById('year').textContent=new Date().getFullYear();
+
+ form.addEventListener('submit', async e=>{
+   e.preventDefault();
+   const phone=form.elements.phone.value.trim();
+   const phoneError=document.getElementById('phoneError');
+
+   if(!/^[0-9]{10}$/.test(phone)){
+     phoneError.style.display='block';
+     form.elements.phone.focus();
+     return;
+   }
+   phoneError.style.display='none';
+
+   if(!document.getElementById('agree').checked){
+     alert('Please accept the risk disclaimer before submitting.');
+     return;
+   }
+
+   if(GOOGLE_SCRIPT_URL.includes('PASTE_YOUR_')){
+     alert('The registration system is not connected yet. Please contact the institute administrator.');
+     return;
+   }
+
+   const button=form.querySelector('button[type="submit"]');
+   const originalText=button.textContent;
+   button.disabled=true;
+   button.textContent='Submitting...';
+
+   const data=new FormData(form);
+   const result={submittedAt:new Date().toISOString()};
+   for(const [key,value] of data.entries()){
+     if(result[key]) result[key]+=', '+value;
+     else result[key]=value;
+   }
+
+   try {
+     await fetch(GOOGLE_SCRIPT_URL, {
+       method:'POST',
+       mode:'no-cors',
+       body:new URLSearchParams(result)
+     });
+
+     form.style.display='none';
+     success.style.display='block';
+     success.scrollIntoView({behavior:'smooth',block:'center'});
+     toast.textContent='Registration submitted successfully.';
+     toast.style.display='block';
+     setTimeout(()=>toast.style.display='none',3000);
+   } catch(err) {
+     alert('Unable to submit right now. Please try again or contact us on WhatsApp.');
+     button.disabled=false;
+     button.textContent=originalText;
+   }
+ });
+</script>
+</body>
+</html>
